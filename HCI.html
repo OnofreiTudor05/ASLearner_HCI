@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    </style>
+
+  <meta charset="utf-8">
+  <title>ASLearner - Design Concept </title>
+</head>
+
+<body>
+  <article>
+    <header>
+      <h1> ASLearner - Design Concept </h1>
+    </header>
+    <div role="contentinfo">
+      <section typeof="sa:AuthorsList">
+        <h2> Authors </h2>
+        <ul>
+          <li typeof="sa:ContributorRole" property="schema:author">
+            <span typeof="schema:Person">
+              <meta property="schema:givenName" content="Tudor">
+              <meta property="schema:additionalName" content="Cristian">
+              <meta property="schema:familyName" content="Onofrei">
+              <span property="schema:name"> Onofrei Tudor-Cristian </span>
+            </span>
+            <ul>
+              <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                <a href="mailto:onofrei.tudorcristian@gmail.com"
+                  property="schema:email">onofrei.tudorcristian@gmail.com</a>
+              </li>
+            </ul>
+          </li>    
+      </section>
+
+      <section typeof="sa:Affiliations">
+        <h2>Affiliations</h2>
+        <ul>
+          <li id="sa">
+            <span typeof="schema:Organization" resource="https://uaic.ro/">
+              <span property="schema:name">uaic.ro</span>,
+              <span property="schema:parentOrganization">
+                <span typeof="schema:Organization">
+                  <span property="schema:name">Alexandru Ioan Cuza University</span>
+                 <span property="schema:location" typeof="schema:Place">
+                    <span property="schema:address" typeof="schema:PostalAddress">
+                      <span property="schema:addressLocality">Iasi</span>,
+                      <span property="schema:addressRegion">Iasi</span>,
+                      <span property="schema:addressCountry">Romania</span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <section>
+      <h1>Table of Contents</h1>
+      <ul>
+        <li>
+          <a href="#introduction"> 1. Introduction - About ASLearner </a>
+        </li>
+
+        <li>
+          <a href="#overall_description"> 2. Overall Description </a>
+          <ul>
+            <li> <a href="#product_perspective"> 2.1 Product Perspective </a> </li>
+            <li> <a href="#product_functions"> 2.2 Product Functions </a> </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#design_specifications"> 3. Design Specifications </a>
+          <ul>
+            <li> <a href="#interaction_design_patterns"> 3.1 Interaction Design Patterns </a> </li>
+            <li> <a href="#questions_options_criteria"> 3.2 Questions - Options - Criteria </a> </li>
+            <li> <a href="#personas"> 3.3 Personas </a> </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#design_description"> 4. Design Description </a>
+          <ul>
+            <li> <a href="#sketch"> 4.1 Sketch  </a> </li>
+            <li> <a href="#wireframe"> 4.2 Wireframe </a> </li>
+            <li> <a href="#design_mockup"> 4.3 Design Mockup </a> </li>
+          </ul>
+        </li>
+
+    <section>
+      <h2 id="introduction"> 1. Introduction - About ASLearner </h2>
+      <section>
+        <p> ASLearner is a mobile app designed to help the people who cannot speak and the people that desire to learn the sign language; 
+          the app contains 3 modules - one for live translation and 2 centered on guided learning - which facilitate the learning of ASL in a different way. </p>
+      </section>
+    </section>
+
+    <section>
+      <h1 id="overall_description"> 2. Overall Description </h1>
+      <section>
+        <h2 id="product_perspective"> 2.1 Product Perspective </h2>
+        <p> ASLearner is a new, self-contained product, that is based on a previous project - <a href="https://www.signlanguage101.com/"> Sign Language 101 </a> -
+            intended to give a more complex and easier method in learning ASL. </p>
+      </section>
+      <section>
+        <h2 id="product_functions"> 2.2 Product Functions</h2>
+        <p> The functions offered by the product are the live translation of ASL signs - Live Translator -, the display and the possibility of interacting 
+          with the translated text for the users not knowing the sign language and 2 modules intended for the users who want to learn this language;
+          the first module - Signing Improver - offers the user the possibility of signing certain given ASL characters; in case the user incorrectly signs the character, he is being offered
+          a hint (a displayed pose for the hand) in order to sign the character correctly while the second module - Learn the Basics - is more oriented for the beginner learner. This last module
+          puts the user in a learning position: being given an ASL character and the pose for the hand, the user should make the pose accordingly in order to advance to the next characters.
+          The user is also free to make hand gestures in order to explore the ASL.
+
+        </p>
+      </section>
+
+    <section>
+      <h1 id="design_specifications"> 3. Design Specifications </h1>
+      <section>
+        <h2 id="interaction_design_patterns"> 3.1 Interaction Design Patterns </h2>
+
+        <p> The main interaction design patterns used in this project are: </p>
+        <ul>
+          <li> One Window Drilldown: Being a mobile app, the window size is reduced; this interaction design pattern is used in conjuction with Breadcrumbs in order
+            to facilitate the easy interaction and the application flow for the user
+          </li>
+          <li> Breadcrumbs: Every window from the second level of the application flow displays a path explored by the user until that window; in this manner, the user
+            can touch the path in order to get a step back and it is also favours recognition and recall by respecting the 3-Click Rule (the longest length of the exploration path from the first window to the last windows is 3 touches).
+          </li>
+          <li> Multi-Level Help: Along with the about section of the app explaining the application modules, the learning modules windows will display certain messages in order to help the client to use the app.
+          </li>
+          <li> Hub and Spoke: The 3 modules are independent one from another; they can be accesed independently by the client after accessing the "Start" menu.
+          </li>
+          <li> Pyramid: The interaction design is structured like a pyramid; at the end points of the "Start" menu of the interaction graph lies one of the 3 modules available for the user, facilitating the hierarchical and sequencial exploration.
+            It is used in conjuction with One Window Drilldown for a better display of the data. 
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id="questions_options_criteria"> 3.2 Questions - Options - Criteria </h2>
+
+        <p> The main concerns around the design around the interaction were: </p>
+        <ul>
+          <li>
+          <ul>
+          <li> Question: How can be displayed the predicted character, the pose and the hint from "Signing Improver" module?</li>
+          <li> Options: vertical grid box layout, horizontal grid box layout, combobox </li>
+          <li> Criteria: Efficiency, Ergonomy, Split View
+              <table>
+                <tr>
+                  <th> </th>
+                  <th>Vertical Grid box Layout</th>
+                  <th>Horizontal Grid box Layout</th>
+                  <th>Combobox</th>
+                </tr>
+                <tr>
+                  <td>Efficiency</td>
+                  <td>5</td>
+                  <td>9</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>Ergonomy</td>
+                  <td>5</td>
+                  <td>10</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>Split View</td>
+                  <td>9</td>
+                  <td>10</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td>19</td>
+                  <td>29</td>
+                  <td>13</td>
+                </tr>
+               
+               </table>
+               </li>
+            </ul>
+          </li>
+
+          <li>
+            <ul>
+            <li> Question: What can be used in order to change the luminosity of the app?</li>
+            <li> Options: combobox, progress bar, textfield </li>
+            <li> Criteria: Efficiency, Ease of Implementation, Functionality
+                <table>
+                  <tr>
+                    <th> </th>
+                    <th>Combobox</th>
+                    <th>Progress Bar</th>
+                    <th>Textfield</th>
+                  </tr>
+                  <tr>
+                    <td>Efficiency</td>
+                    <td>5</td>
+                    <td>10</td>
+                    <td>7</td>
+                  </tr>
+                  <tr>
+                    <td>Ease of Implementation</td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>7</td>
+                  </tr>
+                  <tr>
+                    <td>Functionality</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>9</td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td>20</td>
+                    <td>28</td>
+                    <td>23</td>
+                  </tr>
+                 
+                 </table>
+                 </li>
+              </ul>
+            </li>
+
+        <li>
+          <ul>
+          <li> Question: What can be used in order to display the messages in the "Live Translator" module?</li>
+          <li> Options: textbox, textfield, option panel</li>
+          <li> Criteria: Efficiency, Ease of View, Least Space Used
+              <table>
+                <tr>
+                  <th> </th>
+                  <th>Textbox</th>
+                  <th>Textfield</th>
+                  <th>Option Panel</th>
+                </tr>
+                <tr>
+                  <td>Efficiency</td>
+                  <td>10</td>
+                  <td>5</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Ease of View</td>
+                  <td>10</td>
+                  <td>6</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>Least Spaced Used</td>
+                  <td>7</td>
+                  <td>9</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td>27</td>
+                  <td>20</td>
+                  <td>19</td>
+                </tr>
+               
+               </table>
+               </li>
+            </ul>
+          </li>
+      </ul>
+      </section>
+      <section>
+        <h2 id="personas"> 3.2 Personas </h2>
+        <a href="./personas_1.html"> Persona 1 & 2</a>
+        <br>
+        <a href="./personas_2.html"> Persona 3 & 4</a>
+      </section>
+    </section>
+
+      <section>
+        <h1 id="design_description"> 4. Design Description </h1>
+        <section>
+          <h2 id="sketch"> 4.1 Sketch </h2>
+  
+          <p> The sketch used in order for the interactive prototype is in the following image; it was majorly respected from the beginning to the end. </p>
+          <figure typeof="sa:image">
+            <img src="./sketch_1.jpg" alt="Sketch image" width="40%">
+            <figcaption> Prototype sketch </figcaption>
+          </figure>
+      </section>
+
+      <section>
+        <h2 id="wireframe"> 4.2 Wireframe </h2>
+
+        <p> The wireframe of the application; it is structured according to the pyramid interaction design pattern. </p>
+        <figure typeof="sa:image">
+          <img src="./wireframe.jpg" alt="Wireframe image">
+          <figcaption> Wireframe </figcaption>
+        </figure>
+    </section>
+    
+    <section>
+      <h2 id="design_mockup"> 4.3 Design Mockup </h2>
+
+      <p> The interactive prototype of the application was created by using <a href="https://www.figma.com/"> Figma </a> </p>
+      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F7tJ5nLgWUbV66bvdiANwz2%2FASLearner%3Fnode-id%3D3%253A2%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D3%253A2" allowfullscreen></iframe>
+  </section>
+    
+  
+  </section>
+  </article>
+</body>
+
+</html>
